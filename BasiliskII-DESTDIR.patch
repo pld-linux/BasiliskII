@@ -1,0 +1,30 @@
+diff -Nru BasiliskII/src/Unix/Makefile.in BasiliskII.new/src/Unix/Makefile.in
+--- BasiliskII/src/Unix/Makefile.in	Thu Jul 29 15:50:11 1999
++++ BasiliskII.new/src/Unix/Makefile.in	Thu Jul 29 15:51:18 1999
+@@ -15,9 +15,9 @@
+ 
+ prefix=@prefix@
+ exec_prefix=@exec_prefix@
+-bindir=$(exec_prefix)/bin
+-libdir=$(exec_prefix)/lib
+-mandir=$(prefix)/man
++bindir=@bindir@
++libdir=@libdir@
++mandir=@mandir@
+ INSTALL=@INSTALL@
+ INSTALL_PROGRAM=@INSTALL_PROGRAM@
+ INSTALL_DATA=@INSTALL_DATA@
+@@ -55,9 +55,10 @@
+ 	cd Linux/NetDriver && make
+ 
+ install: $(APP)
+-	$(INSTALL_PROGRAM) -s BasiliskII $(bindir)
+-	$(INSTALL_DATA) BasiliskII.1 $(mandir)/man1/
+-	$(INSTALL_DATA) basilisk_ii_keycodes $(libdir)
++	$(INSTALL) -d $(DESTDIR)$(bindir) $(DESTDIR)$(mandir)/man1 $(DESTDIR)$(libdir)
++	$(INSTALL_PROGRAM) -s BasiliskII $(DESTDIR)$(bindir)
++	$(INSTALL_DATA) BasiliskII.1 $(DESTDIR)$(mandir)/man1/
++	$(INSTALL_DATA) basilisk_ii_keycodes $(DESTDIR)$(libdir)
+ 
+ clean:
+ 	rm -f $(OBJ_DIR)/* core* *.core *~ *.bak
