@@ -3,11 +3,11 @@ Summary(pl):	Programowy emulator komputera Macintosh
 Name:		BasiliskII
 Version:	0.7
 Release:	1
-Copyright:	GPL
+License:	GPL
 Group:		Applications/Emulators
 Group(pl):	Aplikacje/Emulatory
-Source:		http://iphcip1.physik.uni-mainz.de/~cbauer/%{name}_src_250799.tar.gz
-Patch:		BasiliskII-DESTDIR.patch
+Source0:	http://iphcip1.physik.uni-mainz.de/~cbauer/%{name}_src_250799.tar.gz
+Patch0:		BasiliskII-DESTDIR.patch
 URL:		http://www.uni-mainz.de/~bauec002/B2Main.html
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -15,19 +15,20 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_mandir		/usr/X11R6/man
 
 %description
-BasiliskII is a software emulation of Aple Macintosh system
-hardware, which enables you to run most available Mac software.  Since
-it is a software emulation, no extra or special hardware is needed.
-BasiliskII can be run with MacOS 7.X or 8.X (but 7.0.0 is not recommended)
-ROM file are not included in this archive, You need a really mac 68k
+BasiliskII is a software emulation of Aple Macintosh system hardware,
+which enables you to run most available Mac software. Since it is a
+software emulation, no extra or special hardware is needed. BasiliskII
+can be run with MacOS 7.X or 8.X (but 7.0.0 is not recommended) ROM
+file are not included in this archive, You need a really mac 68k
 Warning!!! This is the alpha release!!!
 
 %description -l pl
-BasiliskII jest programowym emulatorem komputera Aplle Macintosh, pozwal±jacym
-na uruchomienie wiêkszosci aplikacji MacOSa. Emulacja przeprowadzana jest
-programowo, wiêc nie jest konieczne posiadanie dodatkowego sprzêtu. BasiliskII
-mo¿e pracowaæ z MacOSem 7.X lub 8.X (aczkolwiek 7.0.0 nie jest polecany)
-Uwaga!!! Program jest w stadium alfa!!!!
+BasiliskII jest programowym emulatorem komputera Aplle Macintosh,
+pozwal±jacym na uruchomienie wiêkszosci aplikacji MacOSa. Emulacja
+przeprowadzana jest programowo, wiêc nie jest konieczne posiadanie
+dodatkowego sprzêtu. BasiliskII mo¿e pracowaæ z MacOSem 7.X lub 8.X
+(aczkolwiek 7.0.0 nie jest polecany) Uwaga!!! Program jest w stadium
+alfa!!!!
 
 %prep
 %setup -q -n %{name}
