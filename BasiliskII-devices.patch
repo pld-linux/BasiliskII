@@ -1,0 +1,22 @@
+diff -urN BasiliskII-0.9.orig/src/Unix/sys_unix.cpp BasiliskII-0.9/src/Unix/sys_unix.cpp
+--- BasiliskII-0.9.orig/src/Unix/sys_unix.cpp	Fri Feb  2 21:52:58 2001
++++ BasiliskII-0.9/src/Unix/sys_unix.cpp	Fri Jan 11 15:35:23 2002
+@@ -120,8 +120,8 @@
+ void SysAddFloppyPrefs(void)
+ {
+ #if defined(__linux__)
+-	PrefsAddString("floppy", "/dev/fd0H1440");
+-	PrefsAddString("floppy", "/dev/fd1H1440");
++	PrefsAddString("floppy", "/dev/fd0u1440");
++	PrefsAddString("floppy", "/dev/fd1u1440");
+ #elif defined(__NetBSD__)
+ 	PrefsAddString("floppy", "/dev/fd0a");
+ 	PrefsAddString("floppy", "/dev/fd1a");
+@@ -177,6 +177,7 @@
+ 
+ #if defined(__linux__)
+ 	PrefsAddString("cdrom", "/dev/cdrom");
++	PrefsAddString("cdrom", "/dev/cdroms/cdrom0");
+ #elif defined(__FreeBSD__)
+ 	PrefsAddString("cdrom", "/dev/cd0c");
+ #elif defined(__NetBSD__)
