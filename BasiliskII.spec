@@ -9,6 +9,7 @@ Group(de):	Applikationen/Emulators
 Group(pl):	Aplikacje/Emulatory
 Source0:	http://iphcip1.physik.uni-mainz.de/~cbauer/%{name}_src_31052001.tar.gz
 URL:		http://www.uni-mainz.de/~bauec002/B2Main.html
+BuildRequires:	autoconf
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
