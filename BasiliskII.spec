@@ -33,7 +33,7 @@ dodatkowego sprzêtu. BasiliskII mo¿e pracowaæ z MacOSem 7.X lub 8.X
 alfa!!!!
 
 %prep
-%setup -q 
+%setup -q
 
 %patch0 -p1
 
