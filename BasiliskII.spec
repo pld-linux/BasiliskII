@@ -5,9 +5,10 @@ Version:	0.8
 Release:	1
 License:	GPL
 Group:		Applications/Emulators
+Group(de):	Applikationen/Emulators
 Group(pl):	Aplikacje/Emulatory
 Source0:	http://iphcip1.physik.uni-mainz.de/~cbauer/%{name}_src_30012000.tar.gz
-Patch0:		BasiliskII-DESTDIR.patch
+Patch0:		%{name}-DESTDIR.patch
 URL:		http://www.uni-mainz.de/~bauec002/B2Main.html
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -36,9 +37,9 @@ alfa!!!!
 
 %build
 cd src/Unix
-CXXFLAGS="$RPM_OPT_FLAGS"
-CPPFLAGS="$RPM_OPT_FLAGS"
-LDFLAGS="-s"
+CXXFLAGS="%{rpmcflags}"
+CPPFLAGS="%{rpmcflags}"
+LDFLAGS="%{rpmldflags}"
 export CPPFLAGS CXXFLAGS LDFLAGS
 %configure
 
@@ -50,8 +51,7 @@ rm -rf $RPM_BUILD_ROOT
 (cd src/Unix
 %{__make} install DESTDIR=$RPM_BUILD_ROOT)
 
-gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/* \
-	ChangeLog README TECH TODO
+gzip -9nf ChangeLog README TECH TODO
 
 %clean
 rm -rf $RPM_BUILD_ROOT
