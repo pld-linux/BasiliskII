@@ -5,8 +5,6 @@ Version:	0.9
 Release:	2
 License:	GPL
 Group:		Applications/Emulators
-Group(de):	Applikationen/Emulators
-Group(pl):	Aplikacje/Emulatory
 Source0:	http://iphcip1.physik.uni-mainz.de/~cbauer/%{name}_src_31052001.tar.gz
 Source1:	%{name}.desktop
 Source2:	AppleX.png
