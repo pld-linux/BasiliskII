@@ -2,12 +2,15 @@ Summary:	A software emulation of the Aplle Macintosh
 Summary(pl):	Programowy emulator komputera Macintosh
 Name:		BasiliskII
 Version:	0.9
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/Emulators
 Group(de):	Applikationen/Emulators
 Group(pl):	Aplikacje/Emulatory
 Source0:	http://iphcip1.physik.uni-mainz.de/~cbauer/%{name}_src_31052001.tar.gz
+Source1:	%{name}.desktop
+Source2:	AppleX.png
+Patch0:		%{name}-devices.patch
 URL:		http://www.uni-mainz.de/~bauec002/B2Main.html
 BuildRequires:	autoconf
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -34,6 +37,8 @@ alfa!!!!
 %prep
 %setup -q 
 
+%patch0 -p1
+
 %build
 cd src/Unix
 autoconf
@@ -47,6 +52,12 @@ rm -rf $RPM_BUILD_ROOT
 (cd src/Unix
 %{__make} install DESTDIR=$RPM_BUILD_ROOT)
 
+install -d $RPM_BUILD_ROOT%{_applnkdir}/Amusements
+install -d $RPM_BUILD_ROOT%{_pixmapsdir}
+
+install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Amusements
+install %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
+
 gzip -9nf ChangeLog README TECH TODO
 
 %clean
@@ -57,3 +68,5 @@ rm -rf $RPM_BUILD_ROOT
 %doc *.gz
 %doc src/Unix/Linux
 %attr(755,root,root) %{_bindir}/*
+%{_applnkdir}/Amusements/*
+%{_pixmapsdir}/*
