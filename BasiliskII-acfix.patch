@@ -1,0 +1,10 @@
+--- BasiliskII-0.9/src/Unix/configure.in.orig	2001-05-24 15:06:13.000000000 +0000
++++ BasiliskII-0.9/src/Unix/configure.in	2003-11-24 07:42:50.000000000 +0000
+@@ -496,6 +496,7 @@
+ if $CC conftest.S -c -o conftest.o >/dev/null 2>&1 ; then HAVE_GAS=yes; fi
+ AC_MSG_RESULT($HAVE_GAS)
+ 
++AC_PROG_EGREP
+ dnl Check for GCC 2.7 or higher.
+ HAVE_GCC27=no
+ AC_MSG_CHECKING(for GCC 2.7 or higher)
