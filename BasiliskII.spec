@@ -2,7 +2,7 @@ Summary:	A software emulation of the Apple Macintosh
 Summary(pl):	Programowy emulator komputera Macintosh
 Name:		BasiliskII
 Version:	0.9
-Release:	6
+Release:	7
 License:	GPL
 Group:		Applications/Emulators
 Source0:	http://iphcip1.physik.uni-mainz.de/~cbauer/%{name}_src_31052001.tar.gz
@@ -48,12 +48,12 @@ cp -f /usr/share/automake/config.* .
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_applnkdir}/Amusements,%{_pixmapsdir}}
+install -d $RPM_BUILD_ROOT{%{_desktopdir},%{_pixmapsdir}}
 
 %{__make} install -C src/Unix \
 	DESTDIR=$RPM_BUILD_ROOT
 
-install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Amusements
+install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 install %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
 
 %clean
@@ -63,7 +63,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc ChangeLog README TECH TODO src/Unix/Linux
 %attr(755,root,root) %{_bindir}/*
-%{_applnkdir}/Amusements/*
+%{_desktopdir}/*
 %{_pixmapsdir}/*
 %{_datadir}/%{name}/fbdevices
 %{_datadir}/%{name}/keycodes
