@@ -2,7 +2,7 @@ Summary:	A software emulation of the Aplle Macintosh
 Summary(pl):	Programowy emulator komputera Macintosh
 Name:		BasiliskII
 Version:	0.9
-Release:	3
+Release:	4
 License:	GPL
 Group:		Applications/Emulators
 Source0:	http://iphcip1.physik.uni-mainz.de/~cbauer/%{name}_src_31052001.tar.gz
@@ -41,7 +41,8 @@ alfa!!!!
 cd src/Unix
 cp -f /usr/share/automake/config.* .
 %{__autoconf}
-%configure
+
+%configure LDFLAGS="%{rpmldflags} -lstdc++"
 
 %{__make}
 
@@ -64,3 +65,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %{_applnkdir}/Amusements/*
 %{_pixmapsdir}/*
+%{_datadir}/%{name}/fbdevices
+%{_datadir}/%{name}/keycodes
+%{_mandir}/man1/*
