@@ -33,14 +33,11 @@ alfa!!!!
 
 %prep
 %setup -q 
-%patch -p1
+#%patch -p1
 
 %build
 cd src/Unix
-CXXFLAGS="%{rpmcflags}"
-CPPFLAGS="%{rpmcflags}"
-LDFLAGS="%{rpmldflags}"
-export CPPFLAGS CXXFLAGS LDFLAGS
+autoconf
 %configure
 
 %{__make}
