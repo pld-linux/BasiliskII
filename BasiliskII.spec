@@ -14,7 +14,6 @@ URL:		http://www.uni-mainz.de/~bauec002/B2Main.html
 BuildRequires:	autoconf
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-
 %description
 BasiliskII is a software emulation of Aple Macintosh system hardware,
 which enables you to run most available Mac software. Since it is a
@@ -33,7 +32,6 @@ alfa!!!!
 
 %prep
 %setup -q
-
 %patch0 -p1
 
 %build
@@ -46,8 +44,8 @@ cd src/Unix
 %install
 rm -rf $RPM_BUILD_ROOT
 
-(cd src/Unix
-%{__make} install DESTDIR=$RPM_BUILD_ROOT)
+%{__make} install -C src/Unix \
+	DESTDIR=$RPM_BUILD_ROOT
 
 install -d $RPM_BUILD_ROOT%{_applnkdir}/Amusements
 install -d $RPM_BUILD_ROOT%{_pixmapsdir}
