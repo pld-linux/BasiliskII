@@ -39,7 +39,7 @@ alfa!!!!
 
 %build
 cd src/Unix
-autoconf
+%{__autoconf}
 %configure
 
 %{__make}
