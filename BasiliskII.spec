@@ -26,7 +26,7 @@ Warning!!! This is the alpha release!!!
 
 %description -l pl
 BasiliskII jest programowym emulatorem komputera Aplle Macintosh,
-pozwal±j±cym na uruchomienie wiêkszo¶ci aplikacji MacOSa. Emulacja
+pozwalaj±cym na uruchomienie wiêkszo¶ci aplikacji MacOSa. Emulacja
 przeprowadzana jest programowo, wiêc nie jest konieczne posiadanie
 dodatkowego sprzêtu. BasiliskII mo¿e pracowaæ z MacOSem 7.X lub 8.X
 (aczkolwiek 7.0.0 nie jest polecany) Uwaga!!! Program jest w stadium
