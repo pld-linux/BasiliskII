@@ -42,7 +42,7 @@ LDFLAGS="-s"
 export CPPFLAGS CXXFLAGS LDFLAGS
 %configure
 
-make
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
