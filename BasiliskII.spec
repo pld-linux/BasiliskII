@@ -1,14 +1,18 @@
-Summary:   A software emulation of the Aplle Macintosh
-Summary(pl): Programowy emulator komputera Macintosh
-Name:      BasiliskII
-Version:   0.7
-Release:   1
-URL:       http://www.uni-mainz.de/~bauec002/B2Main.html
-Source:    BasiliskII_src_250799.tar.gz
-Copyright: GPL
-Group:     Applications/Emulators
-Group(pl):  Aplikacje/Emulatory
-BuildRoot: /tmp/%{name}-%{version}-root
+Summary:	A software emulation of the Aplle Macintosh
+Summary(pl):	Programowy emulator komputera Macintosh
+Name:		BasiliskII
+Version:	0.7
+Release:	1
+Copyright:	GPL
+Group:		Applications/Emulators
+Group(pl):	Aplikacje/Emulatory
+Source:		http://iphcip1.physik.uni-mainz.de/~cbauer/%{name}_src_250799.tar.gz
+Patch:		BasiliskII-DESTDIR.patch
+URL:		http://www.uni-mainz.de/~bauec002/B2Main.html
+BuildRoot:	/tmp/%{name}-%{version}-root
+
+%define		_prefix		/usr/X11R6
+%define		_mandir		/usr/X11R6/man
 
 %description
 BasiliskII is a software emulation of Aple Macintosh system
@@ -26,60 +30,33 @@ BasiliskII mo¿e pracowaæ z MacOSem 7.X lub 8.X (aczkolwiek 7.0.0 nie jest poleca
 Uwaga!!! Program jest w stadium alfa!!!!
 
 %prep
-%setup -n %{name}
+%setup -q -n %{name}
+%patch -p1
 
 %build
 cd src/Unix
-CXXFLAGS="$RPM_OPT_FLAGS" CFLAGS="$RPM_OPT_FLAGS" CPPFLAGS="$RPM_OPT_FLAGS" ./configure --prefix=/usr
+CXXFLAGS="$RPM_OPT_FLAGS"
+CPPFLAGS="$RPM_OPT_FLAGS"
+LDFLAGS="-s"
+export CPPFLAGS CXXFLAGS LDFLAGS
+%configure
 
-make RPM_OPT_FLAGS="$RPM_OPT_FLAGS"
+make
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-install -d $RPM_BUILD_ROOT/usr/lib/BasiliskII/Linux
-install -d $RPM_BUILD_ROOT/usr/X11R6/bin
+(cd src/Unix
+make install DESTDIR=$RPM_BUILD_ROOT)
 
-install -m755 -s src/Unix/BasiliskII $RPM_BUILD_ROOT/usr/X11R6/bin
+gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/* \
+	CHANGES README TECH TODO
 
-cp -R src/Unix/Linux/* $RPM_BUILD_ROOT/usr/lib/BasiliskII/Linux
-mkdir docs
-cp CHANGES COPYING README TECH TODO docs
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
-%defattr(-,root,root)
-%doc docs/*
-/usr/lib/BasiliskII
-/usr/X11R6/bin/*
-
-%changelog
-* Wed Jul 28 1999 Roman Niewiarowski <newrom@pasjo.net.pl>
-  [0.7-1]
--  with 32-bit clean ROMs, the CPU type is now reported as a 68030
-          (for those OpenTransport fans :-)
-- added new prefs item "nosound" to disable sound output
-- sound output implemented for BeOS, Linux, Solaris and AmigaOS (requires Sound Manager 3.x)
-- dummy/audio_dummy.cpp: created
-- dummy/prefs_dummy.cpp: created
-- dummy/xpram_dummy.cpp: created
-- macos_util.cpp: added FileDiskLayout()
-- video.cpp: removed useless BlankMousePointer flag
-- uae_cpu: updated to UAE 0.8.9
-- uae_cpu/gencpu.c: fixed bug in CAS2, OpenTransport works now
-- Unix: moved Linux- and FreeBSD-specific files to their respective directories
-- Unix: added 64-bit data types (needed by timer_unix.cpp)
-- Unix: added keyboard translation method using raw keycodes instead of keysyms (controlled by "keycodes" and "keycodefile" prefs items) which doesn't depend on the selected keymap
-- Unix: when running as root, Basilisk II tries to assign real-time priorities to some threads
-- Unix: calls to nanosleep() protected by autoconf define
-- Unix/main_unix.cpp: tick thread replaced by POSIX.4 timer when possible
-- Unix/timer_unix.cpp: uses POSIX.4 timing facilities when possible
-- Unix/video_x.cpp: all X calls during emulation are now done from the redraw thread which is also active in DGA mode; as a result, XLockServer()/XUnlockServer() are no longer necessary
-- Unix/sysdeps.h: changed C++ comments to C comments as this file is included by some *.c files in uae_cpu [Brian J. Johnson]
-- Unix/sysdeps.h: added unaligned access functions for SGI MIPSPro compiler [Brian J. Johnson]
-- Unix/Irix/unaligned.c: created [Brian J. Johnson]
-* Fri Jul 23 1999 Roman Niewiarowski <newrom@pasjo.net.pl>
-  [0.6-1]
-- First rpm release
-- Hallo World ;)
+%defattr(644,root,root,755)
+%doc *.gz
+%doc src/Unix/Linux
+%attr(755,root,root) %{_bindir}/*
