@@ -10,6 +10,7 @@ Source0:	http://iphcip1.physik.uni-mainz.de/~cbauer/%{name}_src_31052001.tar.gz
 Source1:	%{name}.desktop
 Source2:	AppleX.png
 Patch0:		%{name}-devices.patch
+Patch1:		%{name}-acfix.patch
 URL:		http://www.uni-mainz.de/~bauec002/B2Main.html
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -34,6 +35,7 @@ alfa!!!!
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 cd src/Unix
