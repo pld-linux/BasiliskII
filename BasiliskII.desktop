@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=BasiliskII
+Comment=Macintosh emulator
+Comment[pl]=Emulator komputera Macintosh
+Exec=/usr/X11R6/bin/BasiliskII
+Icon=AppleX.png
+Terminal=0
+Type=Application
+
+# vi: encoding=utf-8
