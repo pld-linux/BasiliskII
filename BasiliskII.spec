@@ -1,12 +1,12 @@
 Summary:	A software emulation of the Aplle Macintosh
 Summary(pl):	Programowy emulator komputera Macintosh
 Name:		BasiliskII
-Version:	0.7
+Version:	0.8
 Release:	1
 License:	GPL
 Group:		Applications/Emulators
 Group(pl):	Aplikacje/Emulatory
-Source0:	http://iphcip1.physik.uni-mainz.de/~cbauer/%{name}_src_250799.tar.gz
+Source0:	http://iphcip1.physik.uni-mainz.de/~cbauer/%{name}_src_30012000.tar.gz
 Patch0:		BasiliskII-DESTDIR.patch
 URL:		http://www.uni-mainz.de/~bauec002/B2Main.html
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -31,7 +31,7 @@ dodatkowego sprzêtu. BasiliskII mo¿e pracowaæ z MacOSem 7.X lub 8.X
 alfa!!!!
 
 %prep
-%setup -q -n %{name}
+%setup -q 
 %patch -p1
 
 %build
@@ -51,7 +51,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install DESTDIR=$RPM_BUILD_ROOT)
 
 gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/* \
-	CHANGES README TECH TODO
+	ChangeLog README TECH TODO
 
 %clean
 rm -rf $RPM_BUILD_ROOT
