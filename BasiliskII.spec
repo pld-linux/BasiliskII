@@ -6,6 +6,7 @@ Release:	2
 License:	GPL
 Group:		Applications/Emulators
 Source0:	http://iphcip1.physik.uni-mainz.de/~cbauer/%{name}_src_31052001.tar.gz
+# Source0-md5:	5017e21226c27a4a029da0486dcf04e1
 Source1:	%{name}.desktop
 Source2:	AppleX.png
 Patch0:		%{name}-devices.patch
