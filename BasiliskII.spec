@@ -1,7 +1,7 @@
 Summary:	A software emulation of the Aplle Macintosh
 Summary(pl):	Programowy emulator komputera Macintosh
 Name:		BasiliskII
-Version:	0.8
+Version:	0.9
 Release:	1
 License:	GPL
 Group:		Applications/Emulators
