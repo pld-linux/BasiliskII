@@ -56,14 +56,12 @@ install -d $RPM_BUILD_ROOT%{_pixmapsdir}
 install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Amusements
 install %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
 
-gzip -9nf ChangeLog README TECH TODO
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc ChangeLog README TECH TODO
 %doc src/Unix/Linux
 %attr(755,root,root) %{_bindir}/*
 %{_applnkdir}/Amusements/*
