@@ -12,6 +12,7 @@ Source2:	AppleX.png
 Patch0:		%{name}-devices.patch
 URL:		http://www.uni-mainz.de/~bauec002/B2Main.html
 BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
