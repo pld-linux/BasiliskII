@@ -36,6 +36,7 @@ alfa!!!!
 
 %build
 cd src/Unix
+cp -f /usr/share/automake/config.* .
 %{__autoconf}
 %configure
 
