@@ -9,7 +9,7 @@ Group(pl):	Aplikacje/Emulatory
 Source:		http://iphcip1.physik.uni-mainz.de/~cbauer/%{name}_src_250799.tar.gz
 Patch:		BasiliskII-DESTDIR.patch
 URL:		http://www.uni-mainz.de/~bauec002/B2Main.html
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
 %define		_mandir		/usr/X11R6/man
