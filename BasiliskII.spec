@@ -1,8 +1,8 @@
-Summary:	A software emulation of the Aplle Macintosh
+Summary:	A software emulation of the Apple Macintosh
 Summary(pl):	Programowy emulator komputera Macintosh
 Name:		BasiliskII
 Version:	0.9
-Release:	5
+Release:	6
 License:	GPL
 Group:		Applications/Emulators
 Source0:	http://iphcip1.physik.uni-mainz.de/~cbauer/%{name}_src_31052001.tar.gz
@@ -17,20 +17,20 @@ BuildRequires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-BasiliskII is a software emulation of Aple Macintosh system hardware,
+BasiliskII is a software emulation of Apple Macintosh system hardware,
 which enables you to run most available Mac software. Since it is a
 software emulation, no extra or special hardware is needed. BasiliskII
 can be run with MacOS 7.X or 8.X (but 7.0.0 is not recommended) ROM
-file are not included in this archive, You need a really mac 68k
+files are not included in this archive, You need a real mac 68k
 Warning!!! This is the alpha release!!!
 
 %description -l pl
-BasiliskII jest programowym emulatorem komputera Aplle Macintosh,
+BasiliskII jest programowym emulatorem komputera Apple Macintosh,
 pozwalaj±cym na uruchomienie wiêkszo¶ci aplikacji MacOSa. Emulacja
 przeprowadzana jest programowo, wiêc nie jest konieczne posiadanie
 dodatkowego sprzêtu. BasiliskII mo¿e pracowaæ z MacOSem 7.X lub 8.X
 (aczkolwiek 7.0.0 nie jest polecany) Uwaga!!! Program jest w stadium
-alfa!!!!
+alfa!!!
 
 %prep
 %setup -q
