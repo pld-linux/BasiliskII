@@ -7,5 +7,5 @@ Exec=/usr/bin/BasiliskII
 Icon=AppleX.png
 Terminal=false
 Type=Application
-
+Categories=Utility;Emulator;
 # vi: encoding=utf-8
