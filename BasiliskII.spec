@@ -13,8 +13,6 @@ URL:		http://www.uni-mainz.de/~bauec002/B2Main.html
 BuildRequires:	autoconf
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6
-%define		_mandir		/usr/X11R6/man
 
 %description
 BasiliskII is a software emulation of Aple Macintosh system hardware,
