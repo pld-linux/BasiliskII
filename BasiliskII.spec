@@ -8,7 +8,6 @@ Group:		Applications/Emulators
 Group(de):	Applikationen/Emulators
 Group(pl):	Aplikacje/Emulatory
 Source0:	http://iphcip1.physik.uni-mainz.de/~cbauer/%{name}_src_31052001.tar.gz
-Patch0:		%{name}-DESTDIR.patch
 URL:		http://www.uni-mainz.de/~bauec002/B2Main.html
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -33,7 +32,6 @@ alfa!!!!
 
 %prep
 %setup -q 
-#%patch -p1
 
 %build
 cd src/Unix
