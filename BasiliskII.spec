@@ -23,10 +23,10 @@ ROM file are not included in this archive, You need a really mac 68k
 Warning!!! This is the alpha release!!!
 
 %description -l pl
-BasiliskII jest programowym emulatorem komputera Aplle Macintosh, pozwal±jacym na 
-uruchomienie wiêkszosci aplikacji MacOSa. Emulacja przeprowadzana jest programowo wiêc 
-nie jest konieczne posiadanie dodatkowego sprzêtu. 
-BasiliskII mo¿e pracowaæ z MacOSem 7.X lub 8.X (aczkolwiek 7.0.0 nie jest polecany)
+BasiliskII jest programowym emulatorem komputera Aplle Macintosh, pozwal±jacym
+na uruchomienie wiêkszosci aplikacji MacOSa. Emulacja przeprowadzana jest
+programowo, wiêc nie jest konieczne posiadanie dodatkowego sprzêtu. BasiliskII
+mo¿e pracowaæ z MacOSem 7.X lub 8.X (aczkolwiek 7.0.0 nie jest polecany)
 Uwaga!!! Program jest w stadium alfa!!!!
 
 %prep
