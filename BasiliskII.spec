@@ -66,6 +66,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %{_desktopdir}/*
 %{_pixmapsdir}/*
+%dir %{_datadir}/%{name}
 %{_datadir}/%{name}/fbdevices
 %{_datadir}/%{name}/keycodes
 %{_mandir}/man1/*
