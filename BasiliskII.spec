@@ -43,12 +43,10 @@ cd src/Unix
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT{%{_applnkdir}/Amusements,%{_pixmapsdir}}
 
 %{__make} install -C src/Unix \
 	DESTDIR=$RPM_BUILD_ROOT
-
-install -d $RPM_BUILD_ROOT%{_applnkdir}/Amusements
-install -d $RPM_BUILD_ROOT%{_pixmapsdir}
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Amusements
 install %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
@@ -58,8 +56,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc ChangeLog README TECH TODO
-%doc src/Unix/Linux
+%doc ChangeLog README TECH TODO src/Unix/Linux
 %attr(755,root,root) %{_bindir}/*
 %{_applnkdir}/Amusements/*
 %{_pixmapsdir}/*
