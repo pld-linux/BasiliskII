@@ -64,7 +64,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc ChangeLog README TECH TODO src/Unix/Linux
 %attr(755,root,root) %{_bindir}/*
-%{_desktopdir}/*
+%{_desktopdir}/*.desktop
 %{_pixmapsdir}/*
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/fbdevices
