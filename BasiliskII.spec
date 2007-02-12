@@ -1,5 +1,5 @@
 Summary:	A software emulation of the Apple Macintosh
-Summary(pl.UTF-8):   Programowy emulator komputera Macintosh
+Summary(pl.UTF-8):	Programowy emulator komputera Macintosh
 Name:		BasiliskII
 Version:	0.9
 Release:	7
