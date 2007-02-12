@@ -1,5 +1,5 @@
 Summary:	A software emulation of the Apple Macintosh
-Summary(pl):	Programowy emulator komputera Macintosh
+Summary(pl.UTF-8):   Programowy emulator komputera Macintosh
 Name:		BasiliskII
 Version:	0.9
 Release:	7
@@ -25,11 +25,11 @@ can be run with MacOS 7.X or 8.X (but 7.0.0 is not recommended) ROM
 files are not included in this archive, You need a real mac 68k
 Warning!!! This is the alpha release!!!
 
-%description -l pl
+%description -l pl.UTF-8
 BasiliskII jest programowym emulatorem komputera Apple Macintosh,
-pozwalaj±cym na uruchomienie wiêkszo¶ci aplikacji MacOSa. Emulacja
-przeprowadzana jest programowo, wiêc nie jest konieczne posiadanie
-dodatkowego sprzêtu. BasiliskII mo¿e pracowaæ z MacOSem 7.X lub 8.X
+pozwalajÄ…cym na uruchomienie wiÄ™kszoÅ›ci aplikacji MacOSa. Emulacja
+przeprowadzana jest programowo, wiÄ™c nie jest konieczne posiadanie
+dodatkowego sprzÄ™tu. BasiliskII moÅ¼e pracowaÄ‡ z MacOSem 7.X lub 8.X
 (aczkolwiek 7.0.0 nie jest polecany) Uwaga!!! Program jest w stadium
 alfa!!!
 
