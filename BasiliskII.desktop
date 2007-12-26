@@ -1,10 +1,9 @@
 [Desktop Entry]
-Encoding=UTF-8
 Name=BasiliskII
 Comment=Macintosh emulator
 Comment[pl]=Emulator komputera Macintosh
 Exec=/usr/bin/BasiliskII
-Icon=AppleX.png
+Icon=AppleX
 Terminal=false
 Type=Application
 Categories=Utility;Emulator;
